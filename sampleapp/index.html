@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML table column resizer</title>
+        <meta charset="UTF-8">
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+        <script src="../js/colresizer.js"></script>
+        <script src="sampleapp.js"></script>
+        <link href="sampleapp.css" rel="stylesheet" type="text/css"/>
+    </head>
+
+    <body ng-app="sampleapp">
+        <div ng-controller="samplectrl">
+            <h3>HTML table column resizer - AngularJS directive</h3>
+
+            <div ng-controller="samplectrl">
+                <table>
+                    <thead>
+                        <tr>
+                            <th col-resizer ng-repeat="c in columns" ng-bind="c"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="i in items">
+                            <td ng-bind="i.id"></td>
+                            <td ng-bind="i.active"></td>
+                            <td ng-bind="i.balance"></td>
+                            <td ng-bind="i.age"></td>
+                            <td ng-bind="i.gender"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>          
+            
+            <p>The <span>th</span> and the <span>td</span> elements have to be the following styles: 
+                <span>text-overflow: ellipsis; overflow: hidden</span> And the <span>table</span> is
+                <span>table-layout: fixed</span>"</p>
+            
+        </div>
+    </body>    
+
+</html>
